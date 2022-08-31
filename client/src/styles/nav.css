@@ -1,0 +1,36 @@
+.navbar {
+    width: 100%;
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 1.25rem;
+    margin-left: 0.5rem;
+    width: 50%;
+}
+
+.nav-links-container {
+    width: 50%;
+}
+
+.nav-links-container ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    list-style: none;
+    height: 100%;
+}
+
+.active {
+    color: red;
+}
+
+.link {
+    text-decoration: none;
+    color: black;
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+    cursor: pointer;
+}

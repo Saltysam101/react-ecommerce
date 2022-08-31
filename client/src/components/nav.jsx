@@ -1,6 +1,12 @@
-import {Link} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
+import '../styles/nav.css';
 
 function nav (){
+
+    let activeStyle = {
+        fontWeight: "bold",
+    }
+
   return (
     <nav className="navbar">
         <div className="logo">
@@ -9,10 +15,16 @@ function nav (){
         <div className="nav-links-container">
             <ul>
                 <li>
-                    <Link to='/'>Store</Link>
+                    <NavLink 
+                    className="link"
+                    style={({isActive}) => isActive ? activeStyle : undefined}    
+                    to='/'>Store</NavLink>
                 </li>
                 <li>
-                    <Link to='/cart'>Cart</Link>
+                    <NavLink 
+                    className="link"
+                    style={({isActive}) => isActive ? activeStyle : undefined}
+                     to='/cart'>Cart</NavLink>
                 </li>
                 
             </ul>
