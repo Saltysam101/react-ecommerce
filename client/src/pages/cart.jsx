@@ -19,6 +19,14 @@ const Cart = () => {
     dispatch(removeFromCart(id));
   }
 
+  const getCartCount = () => {
+    return Object.values(cartItems).reduce((qty, item) => Number(item.qty) + qty, 0)
+  }
+
+  const getCartSubTotal = () => {
+    return Object.values(cartItems).reduce((price, item) => (item.price * item.qty) + price, 0)
+  }
+
 
   return (
     <div className='cart-page'>
@@ -29,14 +37,14 @@ const Cart = () => {
             Your cart is empty <Link to={'/'}>Go back</Link>
           </div>
         ): Object.values(cartItems).map((value, index) => (
-          <CartItem key={index} item={value} qtyChangeHandler={qtyChangeHandler} removeItemFromCart={removeItemFromCart}/>
+          <CartItem key={value.product} item={value} qtyChangeHandler={qtyChangeHandler} removeItemFromCart={removeItemFromCart}/>
         ))
         }
       </div>
       <div className="cart-right">
         <div className="cart-info">
-          <p>Subtotal (0) items</p>
-          <p>${}</p>
+          <p>Subtotal ({getCartCount()}) items</p>
+          <p>${getCartSubTotal().toFixed(2)}</p>
         </div>
         <div>
           <button>Proceed To Checkout</button>
