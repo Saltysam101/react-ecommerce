@@ -36,8 +36,12 @@ const Cart = () => {
           <div>
             Your cart is empty <Link to={'/'}>Go back</Link>
           </div>
-        ): Object.values(cartItems).map((value, index) => (
-          <CartItem key={value.product} item={value} qtyChangeHandler={qtyChangeHandler} removeItemFromCart={removeItemFromCart}/>
+        ): Object.values(cartItems).map((item) => (
+          <CartItem key={item.product} 
+          item={item} 
+          qtyChangeHandler={qtyChangeHandler} 
+          removeItemFromCart={removeItemFromCart}
+          />
         ))
         }
       </div>

@@ -4,11 +4,6 @@ import {Link} from 'react-router-dom';
 
 const CartItem = ({item, qtyChangeHandler, removeItemFromCart}) => {
 
-
-
-  
-
-
   return (
     <div className='cartItem'>
         <div className="cart-item-img">
